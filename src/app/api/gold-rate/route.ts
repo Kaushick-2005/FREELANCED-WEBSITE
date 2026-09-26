@@ -1,15 +1,15 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
-const API_KEY = process.env.GOLD_API_KEY || '';
+const API_KEY = process.env.GOLD_API_KEY || "";
 
 // In-memory cache (resets when server restarts, but that's fine —
 // we only fetch once per day, and if server restarts it fetches again once)
 let dailyCache: { date: string; data: any } | null = null;
 
 function getToday(): string {
-  return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+  return new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" });
 }
 
 export async function GET() {
@@ -28,15 +28,18 @@ export async function GET() {
   // Cache is stale or doesn't exist — fetch from API (only 1 call per day!)
   try {
     const headers = {
-      'x-access-token': API_KEY,
-      'Content-Type': 'application/json',
+      "x-access-token": API_KEY,
+      "Content-Type": "application/json",
     };
 
-    const goldRes = await fetch('https://www.goldapi.io/api/XAU/INR', { headers, cache: 'no-store' });
+    const goldRes = await fetch("https://www.goldapi.io/api/XAU/INR", {
+      headers,
+      cache: "no-store",
+    });
 
     if (!goldRes.ok) {
       const errBody = await goldRes.text();
-      console.error('GoldAPI gold error:', goldRes.status, errBody);
+      console.error("GoldAPI gold error:", goldRes.status, errBody);
 
       // If we have stale cache from a previous day, return it
       if (dailyCache) {
@@ -51,8 +54,10 @@ export async function GET() {
 
       return NextResponse.json({
         loading: true,
-        message: 'Live gold rates will load soon. Please try again later.',
-        updated: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        message: "Live gold rates will load soon. Please try again later.",
+        updated: new Date().toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+        }),
       });
     }
 
@@ -60,11 +65,14 @@ export async function GET() {
 
     await new Promise((r) => setTimeout(r, 200));
 
-    const silverRes = await fetch('https://www.goldapi.io/api/XAG/INR', { headers, cache: 'no-store' });
+    const silverRes = await fetch("https://www.goldapi.io/api/XAG/INR", {
+      headers,
+      cache: "no-store",
+    });
 
     if (!silverRes.ok) {
       const errBody = await silverRes.text();
-      console.error('GoldAPI silver error:', silverRes.status, errBody);
+      console.error("GoldAPI silver error:", silverRes.status, errBody);
 
       if (dailyCache) {
         return NextResponse.json({
@@ -78,8 +86,10 @@ export async function GET() {
 
       return NextResponse.json({
         loading: true,
-        message: 'Live gold rates will load soon. Please try again later.',
-        updated: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        message: "Live gold rates will load soon. Please try again later.",
+        updated: new Date().toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+        }),
       });
     }
 
@@ -96,8 +106,8 @@ export async function GET() {
       silver,
       change24k: Number((goldData.chp || 0).toFixed(2)),
       changeSilver: Number((silverData.chp || 0).toFixed(2)),
-      updated: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-      unit: { gold: 'per 10 grams', silver: 'per kg' },
+      updated: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+      unit: { gold: "per 10 grams", silver: "per kg" },
     };
 
     // Cache in memory
@@ -110,7 +120,7 @@ export async function GET() {
       cachedDate: today,
     });
   } catch (error) {
-    console.error('Gold rate API error:', error);
+    console.error("Gold rate API error:", error);
 
     if (dailyCache) {
       return NextResponse.json({
@@ -124,8 +134,8 @@ export async function GET() {
 
     return NextResponse.json({
       loading: true,
-      message: 'Live gold rates will load soon. Please try again later.',
-      updated: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+      message: "Live gold rates will load soon. Please try again later.",
+      updated: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
     });
   }
 }

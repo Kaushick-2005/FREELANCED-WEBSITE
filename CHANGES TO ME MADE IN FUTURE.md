@@ -5,20 +5,24 @@ A premium full-stack luxury jewellery e-commerce website built with Next.js, Rea
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ ([Download](https://nodejs.org/))
 - npm (comes with Node.js)
 - MongoDB Atlas account (already configured)
 
 ### Installation
+
 ```bash
 npm install
 npm run db:generate
 npm run db:push
 npm run dev
 ```
+
 Open **http://localhost:3000** in your browser.
 
 ### Admin Panel
+
 - URL: **http://localhost:3000/admin**
 - Username: `rameez_admin`
 - Password: `Ramez@2026`
@@ -76,11 +80,13 @@ rameez-jewellerz/
 ### 1. 📞 Phone Number
 
 **Location:** `src/lib/i18n.ts` (line ~9)
+
 ```typescript
 // Change these phone numbers everywhere:
 ```
 
 Also update in these files:
+
 - `src/components/luxury/footer.tsx` — search for `90000 00000`
 - `src/components/luxury/whatsapp-button.tsx` — search for `919000000000` (WhatsApp number, no + or spaces)
 - `src/components/sections/contact.tsx` — search for `90000 00000`
@@ -91,6 +97,7 @@ Also update in these files:
 **Location:** `src/components/luxury/footer.tsx` — search for `care@rameezjewellerz.com`
 
 Also in:
+
 - `src/components/sections/contact.tsx` — search for `care@rameezjewellerz.com`
 
 ### 3. 📍 Address / Location
@@ -98,6 +105,7 @@ Also in:
 **Location:** `src/lib/i18n.ts` — search for `Valliyur, Tirunelveli`
 
 Also in:
+
 - `src/components/luxury/footer.tsx` — search for `Valliyur`
 - `src/components/sections/contact.tsx` — search for `Valliyur`
 - `src/components/sections/hero.tsx` — search for `Valliyur`
@@ -106,17 +114,20 @@ Also in:
 ### 4. 📱 WhatsApp Number
 
 **Location:** `src/components/luxury/whatsapp-button.tsx`
+
 ```typescript
-const WHATSAPP = '919000000000'; // Change this (country code + number, no + or spaces)
+const WHATSAPP = "919000000000"; // Change this (country code + number, no + or spaces)
 ```
 
 Also in:
+
 - `src/components/luxury/footer.tsx` — search for `WHATSAPP`
 - `src/components/sections/hero.tsx` — search for `WHATSAPP`
 
 ### 5. 📸 Instagram URL
 
 **Location:** `src/components/luxury/footer.tsx`
+
 ```typescript
 { icon: Instagram, href: 'https://instagram.com', ... }
 // Change 'https://instagram.com' to your Instagram profile URL
@@ -129,20 +140,23 @@ Currently a YouTube video is embedded in the Gallery section.
 **Location:** `src/components/sections/gallery.tsx` — search for `youtube.com/embed`
 
 #### To change the YouTube video:
+
 ```typescript
-src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+src = "https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1";
 // Replace VIDEO_ID with your YouTube video ID (from the URL)
 ```
 
 #### To use a different video platform:
 
 **For Instagram Reel/Video:**
+
 ```typescript
 // Replace the iframe src with:
-src="https://www.instagram.com/reel/REEL_ID/embed"
+src = "https://www.instagram.com/reel/REEL_ID/embed";
 ```
 
 **For a normal video file (MP4) hosted on your server:**
+
 ```typescript
 // Replace the <iframe> with a <video> tag:
 <video
@@ -158,11 +172,13 @@ src="https://www.instagram.com/reel/REEL_ID/embed"
 ```
 
 **For a Vimeo video:**
+
 ```typescript
-src="https://player.vimeo.com/video/VIDEO_ID"
+src = "https://player.vimeo.com/video/VIDEO_ID";
 ```
 
 **For a self-hosted video from any URL:**
+
 ```typescript
 <video className="absolute inset-0 h-full w-full" controls>
   <source src="https://your-website.com/video.mp4" type="video/mp4" />
@@ -174,6 +190,7 @@ src="https://player.vimeo.com/video/VIDEO_ID"
 **Location:** `src/components/luxury/footer.tsx` — search for `9:30 AM`
 
 Also in:
+
 - `src/components/sections/contact.tsx` — search for `9:30 AM`
 
 ### 8. 💰 Gold & Silver Rates
@@ -181,34 +198,38 @@ Also in:
 The rates are simulated with realistic values.
 
 **Location:** `src/app/api/gold-rate/route.ts`
+
 ```typescript
 const BASE_RATES = {
-  gold24k: 75200,  // per 10g (24K) — change this
-  gold22k: 68900,  // per 10g (22K)
-  silver: 96500,   // per kg
+  gold24k: 75200, // per 10g (24K) — change this
+  gold22k: 68900, // per 10g (22K)
+  silver: 96500, // per kg
   roseGold: 71500, // per 10g
 };
 ```
 
 For **real live rates**, integrate an API like [GoldAPI.io](https://goldapi.io) or [Metals-API](https://metals-api.com):
+
 1. Sign up and get an API key
 2. Replace the `GET` function in `src/app/api/gold-rate/route.ts` with a fetch call to the API
 
 ### 9. 🎨 Colors / Theme
 
 **Location:** `src/app/globals.css`
+
 ```css
---gold: #d4af37;        /* Main gold color */
---gold-light: #f5e6a8;   /* Light gold */
---gold-dark: #b8860b;    /* Dark gold */
---rosegold: #c08a96;     /* Rose gold */
---silver: #d4d4d4;       /* Silver */
---royal: #050505;        /* Royal black background */
+--gold: #d4af37; /* Main gold color */
+--gold-light: #f5e6a8; /* Light gold */
+--gold-dark: #b8860b; /* Dark gold */
+--rosegold: #c08a96; /* Rose gold */
+--silver: #d4d4d4; /* Silver */
+--royal: #050505; /* Royal black background */
 ```
 
 ### 10. 🔐 Admin Credentials
 
 **Location:** `src/app/admin/page.tsx` (line ~34)
+
 ```typescript
 if (username === 'rameez_admin' && password === 'Ramez@2026') {
 // Change username and password here
@@ -217,6 +238,7 @@ if (username === 'rameez_admin' && password === 'Ramez@2026') {
 ### 11. 📝 Tagline
 
 **Location:** `src/lib/i18n.ts`
+
 ```typescript
 heroSubtitle: 'Radiant Beauty, Enduring Value',  // English
 // Tamil: 'ஒளிரும் அழகு, நிலைக்கும் மதிப்பு'
@@ -229,7 +251,9 @@ Also in footer: `src/components/luxury/footer.tsx` — search for `Radiant Beaut
 ## 🗄️ Database (MongoDB Atlas)
 
 ### Connection
+
 **File:** `.env`
+
 ```
 DATABASE_URL=mongodb+srv://USERNAME:PASSWORD@YOUR_CLUSTER.mongodb.net/rameez-jewellerz?retryWrites=true&w=majority
 ```
@@ -237,20 +261,23 @@ DATABASE_URL=mongodb+srv://USERNAME:PASSWORD@YOUR_CLUSTER.mongodb.net/rameez-jew
 **Also hardcoded in:** `src/lib/db.ts` (as fallback)
 
 ### Collections (10)
-| Collection | Purpose |
-|---|---|
-| User | User accounts (name, email, phone, password, address) |
-| Product | Jewellery products (name, price, images, stock, flags) |
-| Order | Booked orders (items as JSON, status, user details) |
-| Review | Product reviews (admin-added) |
-| Offer | Special offers (admin-managed) |
-| Coupon | Discount coupons |
-| ContactMessage | Contact form submissions |
-| CustomQuote | Custom jewellery requests (images as Base64 in DB) |
-| GalleryImage | Shop gallery images (admin-managed) |
+
+| Collection     | Purpose                                                |
+| -------------- | ------------------------------------------------------ |
+| User           | User accounts (name, email, phone, password, address)  |
+| Product        | Jewellery products (name, price, images, stock, flags) |
+| Order          | Booked orders (items as JSON, status, user details)    |
+| Review         | Product reviews (admin-added)                          |
+| Offer          | Special offers (admin-managed)                         |
+| Coupon         | Discount coupons                                       |
+| ContactMessage | Contact form submissions                               |
+| CustomQuote    | Custom jewellery requests (images as Base64 in DB)     |
+| GalleryImage   | Shop gallery images (admin-managed)                    |
 
 ### One-Time Cleanup
+
 Delete unused collections:
+
 ```bash
 node scripts/cleanup-db.js
 ```
@@ -260,6 +287,7 @@ node scripts/cleanup-db.js
 ## 🛠️ Admin Dashboard Features
 
 Access at `/admin` — manage:
+
 - **Products**: Add, edit, delete, toggle flags (New/Hot/Featured/Offer), upload multiple images
 - **Offers**: Create, edit, delete special offers
 - **Reviews**: Add reviews linked to products (based on real customer purchases)
@@ -287,26 +315,28 @@ All tabs have **search functionality**.
 
 ## 📜 Available Commands
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start development server (port 3000) |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Check code quality |
+| Command               | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| `npm run dev`         | Start development server (port 3000)            |
+| `npm run build`       | Build for production                            |
+| `npm run start`       | Start production server                         |
+| `npm run lint`        | Check code quality                              |
 | `npm run db:generate` | Regenerate Prisma client (after schema changes) |
-| `npm run db:push` | Push schema changes to MongoDB |
+| `npm run db:push`     | Push schema changes to MongoDB                  |
 
 ---
 
 ## 🌐 Deployment
 
 ### Deploy to Vercel
+
 1. Push code to GitHub
 2. Go to [vercel.com](https://vercel.com) and import the repo
 3. Add environment variable: `DATABASE_URL` = your MongoDB connection string
 4. Deploy
 
 ### Deploy to other platforms
+
 ```bash
 npm run build
 npm run start
