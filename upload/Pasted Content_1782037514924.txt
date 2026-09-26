@@ -1,0 +1,585 @@
+## Error Type
+Console Error
+
+## Error Message
+A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ScrollAndMaybeFocusHandler cacheNode={{rsc:{...}, ...}}>
+      <InnerScrollAndFocusHandlerOld focusAndScrollRef={{scrollRef:null, ...}} cacheNode={{rsc:{...}, ...}}>
+        <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+          <LoadingBoundary name="admin/" loading={null}>
+            <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/admin" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="admin/page...">
+                      <SegmentTrieNode>
+                      <ClientPageRoot Component={function AdminLoginPage} serverProvidedParams={{...}}>
+                        <AdminLoginPage params={Promise} searchParams={Promise}>
+                          <div className="relative f...">
+                            <div className="pointer-ev...">
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "34.55335988346236%"
+-                                 left: "28.7921%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "5.709600265635384px"
+-                                 width: "3.82965px"
++                                 height: "3.2837878719956985px"
+-                                 height: "2.36737px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 9.42801556324243s linear 0.861764126239065s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "12.0929s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "1.29922s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "16.3524017392908%"
+-                                 left: "85.3656%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "5.804929261217232px"
+-                                 width: "2.01092px"
++                                 height: "2.8973548099813917px"
+-                                 height: "5.69355px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 10.443598776057467s linear 1.6702712585253074s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "8.75859s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "0.425741s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "87.37958972226181%"
+-                                 left: "34.0592%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "3.2528777920996745px"
+-                                 width: "4.68331px"
++                                 height: "5.3566906932225695px"
+-                                 height: "3.06056px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 15.433881443841543s linear 1.3270772665314445s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "11.4805s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "2.37119s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "0.9047520684870691%"
+-                                 left: "7.80824%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "4.876912610130098px"
+-                                 width: "4.29134px"
++                                 height: "2.2547147972582717px"
+-                                 height: "5.89575px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 11.16962987649153s linear 3.6880209100670562s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "15.2008s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "2.26013s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "60.58762015308719%"
+-                                 left: "60.8456%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "2.2220914932349753px"
+-                                 width: "4.89448px"
++                                 height: "2.6923806197860927px"
+-                                 height: "4.55739px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 15.032561052333733s linear 0.8655335853257733s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "8.37503s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.01854s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "54.91033075811207%"
+-                                 left: "47.517%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "2.1310583608431926px"
+-                                 width: "3.73581px"
++                                 height: "5.791470309209862px"
+-                                 height: "5.88952px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 13.30827165262787s linear 1.0934530920157313s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "13.2737s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.81017s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "12.069052514456057%"
+-                                 left: "82.3034%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "5.43767032605267px"
+-                                 width: "3.50347px"
++                                 height: "5.63429894388339px"
+-                                 height: "4.67815px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 13.011339736044876s linear 2.945782770831444s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "10.7275s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "0.509153s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "83.5274069260355%"
+-                                 left: "3.98056%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "5.783799095800541px"
+-                                 width: "2.50312px"
++                                 height: "4.882437876101463px"
+-                                 height: "2.05169px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 13.660044257250624s linear 1.1058107881818433s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "12.15s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.88321s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "37.162180455205316%"
+-                                 left: "75.0137%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "3.670358022311309px"
+-                                 width: "5.13624px"
++                                 height: "2.9731057645628143px"
+-                                 height: "4.88169px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 14.18101028519527s linear 1.2736490406113488s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "11.2473s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.13702s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "54.22197574853208%"
+-                                 left: "61.8406%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "2.0476051749512734px"
+-                                 width: "3.78614px"
++                                 height: "5.018761499096817px"
+-                                 height: "5.04882px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 9.530590583762622s linear 0.9265149599302878s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "13.0026s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "1.85463s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "26.42466096208723%"
+-                                 left: "27.2856%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "5.433153013153917px"
+-                                 width: "2.42874px"
++                                 height: "3.5811056106029846px"
+-                                 height: "3.80472px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 9.457881589224911s linear 3.941557922889905s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "13.3316s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.96916s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "21.249287187071143%"
+-                                 left: "88.8347%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "4.449117603835695px"
+-                                 width: "3.67695px"
++                                 height: "3.9141344797169966px"
+-                                 height: "2.43685px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 15.140666471235438s linear 1.4971453182139811s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "10.7617s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "2.6412s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "52.44772681096772%"
+-                                 left: "92.8054%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "2.4926071074742624px"
+-                                 width: "4.64284px"
++                                 height: "2.9647431903590986px"
+-                                 height: "4.86298px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 12.104132767271317s linear 0.9712619642846021s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "11.5486s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.2766s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "76.55710479161834%"
+-                                 left: "46.3662%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "4.344532996004589px"
+-                                 width: "3.61994px"
++                                 height: "3.5712660224647705px"
+-                                 height: "2.68949px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 14.913751299413493s linear 0.5436902835046573s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "15.216s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "3.74687s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                              <span
+                                className="absolute rounded-full"
+                                style={{
++                                 left: "22.678590728794624%"
+-                                 left: "52.5183%"
++                                 bottom: "-10px"
+-                                 bottom: "-10px"
++                                 width: "4.486109987431288px"
+-                                 width: "3.24033px"
++                                 height: "4.038580236349102px"
+-                                 height: "5.68417px"
++                                 background: "radial-gradient(circle, #f5e6a8, #d4af37)"
++                                 animation: "particle-float 9.224042666374142s linear 3.5362502309311683s infinite"
+-                                 background-image: "radial-gradient(circle, rgb(245, 230, 168), rgb(212, 175, 55))"
+-                                 background-position-x: "initial"
+-                                 background-position-y: "initial"
+-                                 background-size: "initial"
+-                                 background-repeat: "initial"
+-                                 background-attachment: "initial"
+-                                 background-origin: "initial"
+-                                 background-clip: "initial"
+-                                 background-color: "initial"
+-                                 animation-duration: "12.6147s"
+-                                 animation-timing-function: "linear"
+-                                 animation-delay: "2.5057s"
+-                                 animation-iteration-count: "infinite"
+-                                 animation-direction: "normal"
+-                                 animation-fill-mode: "none"
+-                                 animation-play-state: "running"
+-                                 animation-name: "particle-float"
+-                                 animation-timeline: "auto"
+-                                 animation-range-start: "normal"
+-                                 animation-range-end: "normal"
+                                }}
+                              >
+                            ...
+                    ...
+                  ...
+        ...
+
+
+
+    at createConsoleError (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2379:71)
+    at handleConsoleError (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:3165:54)
+    at console.error (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:3312:57)
+    at <unknown> (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3439:25)
+    at runWithFiberInDEV (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3438:13)
+    at completeWork (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6885:102)
+    at runWithFiberInDEV (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:965:131)
+    at completeUnitOfWork (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9622:23)
+    at performUnitOfWork (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9551:58)
+    at renderRootConcurrent (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9534:71)
+    at performWorkOnRoot (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:2647:64)
+    at span (<anonymous>:null:null)
+    at <unknown> (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/src_02yhp8t._.js:152:234)
+    at Array.map (<anonymous>:null:null)
+    at AdminLoginPage (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/src_02yhp8t._.js:152:20)
+    at ClientPageRoot (file://C:/GOLD SHOP WEBSITE/rameez-jewellerz/.next/dev/static/chunks/node_modules_0bu8gcd._.js:12892:50)
+
+Next.js version: 16.2.9 (Turbopack)
